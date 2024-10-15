@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="page-title">Discover Our Exclusive Collection</h1>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of products" (click)="selectProduct(product.id)" [routerLink]="['/product']" >
+      <img [src]="product.image" alt="{{product.title}}" class="product-image">
+      <div class="product-details">
+        <p class="product-title">{{ product.title }}</p>
+        <p class="product-price">{{ product.price | currency }}</p>
+        <p-rating [(ngModel)]="product.rating.rate" [readonly]="true" [cancel]="false" />
+        <p class="product-rating">Rating: {{ product.rating.rate }}  ({{ product.rating.count }} reviews)</p>
+      </div>
+    </div>
+  </div>
+</div>

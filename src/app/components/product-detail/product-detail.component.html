@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="product" class="product-detail">
+    <div class="product-detail-header">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+    </div>
+    <div class="product-info">
+      <p class="product-description">{{ product.description }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+      <p><strong>Price:</strong> {{ product.price | currency }}</p>
+    </div>
+    <div class="product-rating">
+      {{ product.rating.rate }}
+      <p-rating [(ngModel)]="product.rating.rate" [readonly]="true" [cancel]="false" />
+      ({{ product.rating.count }} reviews)
+    </div>
+    <button class="buy-now-button">Buy Now</button>
+  </div>
+</div>
