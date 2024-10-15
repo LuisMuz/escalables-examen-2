@@ -1,7 +1,8 @@
 <div class="container">
   <h1 class="page-title">Discover Our Exclusive Collection</h1>
+  <button [routerLink]="['/home-2']" class="view-button">View as List</button>
   <div class="product-grid">
-    <div class="product-card" *ngFor="let product of products" (click)="selectProduct(product.id)" [routerLink]="['/product']" >
+    <div class="product-card" *ngFor="let product of products" (click)="selectProduct(product.id)" [routerLink]="['/product']">
       <img [src]="product.image" alt="{{product.title}}" class="product-image">
       <div class="product-details">
         <p class="product-title">{{ product.title }}</p>
